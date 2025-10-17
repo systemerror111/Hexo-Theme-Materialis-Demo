@@ -1,0 +1,48 @@
+# 基本信息
+img: "/images/avatar.jpg"
+bio: "前端开发者 | 技术爱好者"
+talk: "这里写你的个人介绍，可以包括你的技术背景、工作经历、兴趣爱好等。"
+tags:
+  - "JavaScript"
+  - "Vue"
+  - "React"
+  - "Node.js"
+  - "前端开发"
+
+# 技能列表 (使用 SVG 图标链接)
+# 图标配置
+icons:
+  - name: "JavaScript"
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+    
+  - name: "TypeScript" 
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+    
+  - name: "Vue"
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+    
+  - name: "React"
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+    
+  - name: "Node.js"
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+    
+  - name: "Git"
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+# 社交链接
+socials:
+  - name: "GitHub"
+    url: "https://github.com/yourusername"
+    svg: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+  - name: "哔哩哔哩"
+    url: "https://space.bilibili.com/yourid"
+    svg: "/images/bilibili.svg"
+  - name: "邮箱"
+    url: "mailto:your-email@example.com"
+    icon: "email"
+  - name: "个人网站"
+    url: "https://your-website.com"
+    icon: "language"
+
+# 其他链接
+url: "https://your-website.com"
