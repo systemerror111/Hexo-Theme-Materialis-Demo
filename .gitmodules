@@ -1,0 +1,3 @@
+[submodule "themes/Materialis"]
+	path = themes/Materialis
+	url = https://github.com/Can1425/Hexo-Theme-Materialis.git

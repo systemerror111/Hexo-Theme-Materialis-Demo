@@ -1,0 +1,28 @@
+name: Update Theme
+
+on:
+  schedule:
+    - cron: '0 18 * * *'
+  workflow_dispatch: 
+
+jobs:
+  update-theme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Blog Source
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }} 
+          submodules: true
+
+      - name: Update Theme Submodule
+        run: |
+          git config --global user.name "systemerror111"
+          git config --global user.email "zhuguojin4@gmail.com"
+          cd themes/Materialis
+          git checkout main  
+          git pull origin main
+          cd ../..
+          git add themes/Materialis
+          git commit -m "chore: Auto-update theme to latest version" || echo "No changes to commit"
+          git push origin main
