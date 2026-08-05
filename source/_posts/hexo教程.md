@@ -1,6 +1,7 @@
 ---
 abbrlink: 9caf0a8d
-categories: []
+categories:
+  - - 杂谈
 date: '2023-08-27T10:11:39.062954+08:00'
 tags: []
 title: hexo教程
