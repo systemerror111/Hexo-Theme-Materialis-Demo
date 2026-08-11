@@ -1,0 +1,38 @@
+name: Update Theme Main and Develop
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: '选择要更新的分支'
+        required: true
+        default: 'main'
+        type: choice
+        options:
+          - main
+          - feature/v4
+
+jobs:
+  update-theme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Blog Source
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }} 
+          submodules: true
+
+      - name: Update Theme Submodule
+        run: |
+          git config --global user.name "systemerror111"
+          git config --global user.email "zhuguojin4@gmail.com"
+          
+          cd themes/Materialis
+          git fetch origin ${{ github.event.inputs.branch }}:${{ github.event.inputs.branch }}
+          git checkout ${{ github.event.inputs.branch }}
+          git pull origin ${{ github.event.inputs.branch }}
+          cd ../..
+          
+          git add themes/Materialis
+          git commit -m "chore: Auto-update theme to ${{ github.event.inputs.branch }}" || echo "No changes to commit"
+          git push origin main
