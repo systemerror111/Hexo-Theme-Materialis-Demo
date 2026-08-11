@@ -1,0 +1,26 @@
+name: test
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  update-theme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Blog Source
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }} 
+          submodules: true
+
+      - name: Debug - List All Branches
+        run: |
+          cd themes/Materialis
+          echo "=== 列出所有远程分支 ==="
+          git ls-remote --heads origin
+          echo ""
+          echo "=== 列出所有本地分支 ==="
+          git branch -a
+          echo ""
+          echo "=== 查看远程仓库信息 ==="
+          git remote show origin
