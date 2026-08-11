@@ -18,29 +18,18 @@ jobs:
           git config --global user.name "systemerror111"
           git config --global user.email "zhuguojin4@gmail.com"
           
-          echo "=== 检查子模块状态 ==="
-          git submodule status
+          cd themes/Materialis
           
-          echo "=== 进入主题目录 ==="
-          cd themes/Materialis || exit 1
+          # 先获取所有远程分支
+          git fetch --all
           
-          echo "=== 查看当前分支 ==="
-          git branch -a
+          # 直接切换到远程的 feature/v4 分支
+          git checkout -b feature/v4 origin/feature/v4
           
-          echo "=== 切换到 feature/v4 分支 ==="
-          git checkout feature/v4 || git checkout -b feature/v4 origin/feature/v4
-          
-          echo "=== 拉取最新代码 ==="
+          # 拉取最新代码
           git pull origin feature/v4
           
-          echo "=== 返回主目录 ==="
           cd ../..
-          
-          echo "=== 添加子模块更新 ==="
           git add themes/Materialis
-          
-          echo "=== 提交更改 ==="
-          git commit -m "chore: Auto-update theme to latest version" || echo "No changes to commit"
-          
-          echo "=== 推送到远程 ==="
+          git commit -m "chore: Auto-update theme to feature/v4" || echo "No changes to commit"
           git push origin main
