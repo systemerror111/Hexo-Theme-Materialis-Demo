@@ -20,13 +20,13 @@ jobs:
           
           cd themes/Materialis
           
-          # 先获取所有远程分支
-          git fetch --all
+          # 方法1: 直接用 fetch 获取具体分支
+          git fetch origin feature/v4:feature/v4
           
-          # 直接切换到远程的 feature/v4 分支
-          git checkout -b feature/v4 origin/feature/v4
+          # 切换到该分支
+          git checkout feature/v4
           
-          # 拉取最新代码
+          # 拉取最新
           git pull origin feature/v4
           
           cd ../..
